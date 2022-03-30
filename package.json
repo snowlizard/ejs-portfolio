@@ -1,0 +1,22 @@
+{
+  "name": "ejs-portfolio",
+  "version": "1.0.0",
+  "description": "ejs node express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./server/index.js"
+  },
+  "keywords": [
+    "ejs",
+    "node",
+    "express"
+  ],
+  "author": "Julian",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "morgan": "^1.10.0"
+  }
+}

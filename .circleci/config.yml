@@ -11,19 +11,10 @@ jobs:
     steps:
       - node/install-packages:
       - run: npm install
-  deploy:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - checkout
-      - run:
-          command: git push https://heroku:${{HEROKU_API_KEY}}@git.heroku.com/ejs--portfolio.git main
+
 
 workflows:
   version: 2.1
   build-deploy:
     jobs:
       - build
-      - deploy:
-          requires:
-            - build

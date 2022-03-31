@@ -20,6 +20,8 @@ workflow:
     jobs:
       - build
       - heroku/deploy-via-git:
+        requires:
+          - build
         api-key: f1d640b0-8611-431f-af9a-214b98624962
         app-name: ejs--portfolio
         branch: main

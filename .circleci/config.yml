@@ -9,7 +9,7 @@ jobs:
       # specify the version you desire here
       - image: cimg/base:stable
     steps:
-      - node/install-packages:
+      - checkout
       - run: npm install
 
 
@@ -17,4 +17,4 @@ workflows:
   version: 2.1
   build-deploy:
     jobs:
-      - build
+    - build

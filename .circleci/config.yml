@@ -13,15 +13,16 @@ jobs:
       - node/install:
         node-version: '16.14.2'
       - node/install-packages
+  deploy:
+    steps:
+      - heroku/deploy-via-git:
+        api-key: f1d640b0-8611-431f-af9a-214b98624962
+        app-name: ejs--portfolio
+        branch: main
 
 workflow:
   version: 2.1
   build_deploy:
     jobs:
       - build
-      - heroku/deploy-via-git:
-        requires:
-          - build
-        api-key: f1d640b0-8611-431f-af9a-214b98624962
-        app-name: ejs--portfolio
-        branch: main
+      - deploy

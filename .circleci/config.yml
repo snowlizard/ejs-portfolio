@@ -10,11 +10,8 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run: npm install
-
+      - node/install-packages
 
 workflows:
-  version: 2.1
-  build-deploy:
-    jobs:
+  jobs:
     - build

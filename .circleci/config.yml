@@ -1,13 +1,15 @@
 version: 2.1
-
-orbs:
-  node: circleci/node@5.0.2
-
-jobs: 
-  build: 
-    docker: 
-      # specify the version you desire here
-      - image: cimg/base:stable
+jobs:
+  build:
+    docker:
+      - image: cimg/node:16.14.2
+    working_directory: ~/repo
     steps:
       - checkout
-      - node/install-packages
+      run: npm install
+
+workflow:
+  version: 2.1
+  build:
+    jobs:
+      - build

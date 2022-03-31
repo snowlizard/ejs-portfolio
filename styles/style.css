@@ -33,11 +33,13 @@
 	color: black;
 	margin: 5px;
 }
-
-.contact-main{
+.contact-container{
 	background-image: var(--bg);
 	width: 100vw;
 	height: 100vh;
+}
+.contact-main{
+	height: 80%;
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: center;
@@ -51,11 +53,15 @@
 	text-align: center;
 }
 
-.thank-you{
+.ty-container{
 	width: 100vw;
 	height: 100vh;
-	font-size: 4em;
 	background: var(--bg);
+}
+
+.thank-you{
+	height: 80%;
+	font-size: 4em;
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: center;

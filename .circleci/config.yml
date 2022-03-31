@@ -32,7 +32,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: git push https://heroku:f1d640b0-8611-431f-af9a-214b98624962@git.heroku.com/ops200-delivery.git main
+          command: git push https://heroku:${{HEROKU_API_KEY}}@git.heroku.com/ejs--portfolio.git main
 
 workflows:
   version: 2

@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const nodeMailer = require('nodemailer');
 
 const app = express();
 
@@ -24,6 +25,31 @@ app.get('/contact', (req, res) => {
 });
 
 app.post('/thanks', (req, res) => {
+    let transporter = nodeMailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        service: 'gmail',
+        auth: {
+            user: 'stoiccheese@gmail.com',
+            pass: 'wvvsetejrjgidfog'
+        }
+    });
+
+    const mailOptions = {
+        from: 'stoiccheese@gmail.com',
+        to: 'illegal_burrito@live.com',
+        subject: 'portfolio contact',
+        text: `${req.body.name} sent you a msg \n
+        ${req.body.text}`
+    };
+
+    transporter.sendMail(mailOptions, (err, ok) =>{
+        err ? console.log(err) 
+        : console.log('email sent!');
+        transporter.close();
+    });
+
     res.render('thanks', { contact: req.body });
 });
 

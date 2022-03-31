@@ -9,7 +9,8 @@ jobs:
       - image: cimg/node:16.14.2
     steps:
       - checkout
-      - node/install-npm
+      - node/install:
+        node-version: '16.14.2'
       - node/install-packages
 
 workflow:

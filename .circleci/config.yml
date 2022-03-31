@@ -13,5 +13,7 @@ jobs:
       - node/install-packages
 
 workflows:
-  jobs:
-    - build
+  version: 2.1
+  build-deploy:
+    jobs:
+      - build

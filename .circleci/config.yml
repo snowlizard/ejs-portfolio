@@ -9,7 +9,9 @@ jobs:
       # specify the version you desire here
       - image: cimg/base:stable
     steps:
-      - node/install-packages
+      - node/install:
+        install-yarn: true
+        node-version: '16.14.2'
 
   deploy:
     docker:

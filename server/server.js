@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const nodeMailer = require('nodemailer');
+require('dotenv').config();
 
 const app = express();
 
@@ -32,7 +33,7 @@ app.post('/thanks', (req, res) => {
         service: 'gmail',
         auth: {
             user: 'stoiccheese@gmail.com',
-            pass: 'wvvsetejrjgidfog'
+            pass: process.env.APP_PASS
         }
     });
 

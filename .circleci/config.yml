@@ -18,7 +18,7 @@ jobs:
       - image: cimg/node:16.14.2
     steps:
       - heroku/deploy-via-git:
-          api-key: f1d640b0-8611-431f-af9a-214b98624962
+          api-key: $HEROKU_API_KEY
           app-name: ejs--portfolio
           branch: main
 
